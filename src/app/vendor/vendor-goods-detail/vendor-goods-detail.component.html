@@ -1,0 +1,27 @@
+
+<div class="fragment">
+    <div class="fragmentHeader">
+        <h1>Goods Detail</h1>
+      </div>
+      <table >
+        <tr>
+          <th >Document No</th>
+          <th>Material</th>
+          <th>Identification No</th>
+          <th >Purchase Order No</th>
+          <th>Purchase Order Quantity</th>
+          <th>Plant</th>
+        </tr>
+        <tr *ngFor="let x of goodsDetaillistresults ">
+           <td>{{x.MAT_DOC}}</td>
+           <td>{{x.MATERIAL}}</td>
+           <td>{{x.LINE_ID}}</td>
+           <td>{{x.PO_NUMBER}}</td>
+           <td>{{x.PO_PR_QNT}}</td>
+           <td>{{x.PLANT}}</td>
+        </tr>
+      </table>
+    
+    
+
+</div>

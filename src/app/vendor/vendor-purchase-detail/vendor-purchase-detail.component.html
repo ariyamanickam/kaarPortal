@@ -1,0 +1,36 @@
+<div class="fragment">
+    <div class="fragmentHeader">
+        <h1>Purchase Detail</h1>
+      </div>
+      <table >
+        <tr>
+          <th >Document No</th>
+          <th>Purchasing Info Record</th>
+          <th>Effective value Item</th>
+          <th >Quantity</th>
+          
+          <th>Gross Value</th>
+          <th>Material</th>
+          <th>Net Price</th>
+          <th >Net Value</th>
+          <th>Plant</th>
+          <th>Purchasing Document No</th>
+        </tr>
+        <tr *ngFor="let x of purchaselistresults ">
+           <td>{{x.PO_NUMBER}}</td>
+           <td>{{x.INFO_REC}}</td>
+           <td>{{x.EFF_VALUE}}</td>
+           <td>{{x.QUANTITY}}</td>
+          
+           <td>{{x.GROS_VALUE}}</td>
+           <td>{{x.MATERIAL}}</td>
+           <td>{{x.NET_PRICE}}</td>
+           <td>{{x.NET_VALUE}}</td>
+           <td>{{x.PLANT}}</td>
+           <td>{{x.PO_ITEM}}</td>
+        </tr>
+      </table>
+    
+    
+
+</div>

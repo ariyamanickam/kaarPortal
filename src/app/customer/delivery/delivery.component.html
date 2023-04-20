@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="Payment_Ageing">
+  <h1>List of Delivery</h1>
+</div>
+
+<div class="filter">
+  <mat-form-field appearance="standard">
+      <mat-label><mat-icon mat-list-icon class="icon-display">search</mat-icon>&ensp;Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+  </mat-form-field>
+  <button class="btn" (click)="exportexcel()"><i class="fa fa-download"></i> Download</button>
+</div>
+<section class="micposition">
+  <button mat-fab *ngIf="listening$ | async; else mic" (click)="stop()">
+      <mat-icon class="soundwave">mic</mat-icon>
+  </button>
+  <ng-template #mic>
+      <button mat-fab (click)="start()">
+          <mat-icon>mic</mat-icon>
+      </button>
+  </ng-template>
+</section>
+
+<section *ngIf="transcript$ | async">
+
+</section>
+
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort
+    (matSortChange)="announceSortChange($event)" id="excel-table">
+
+    <!--- Note that these columns can be defined in any order.
+           The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="VBELN">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Delivery Doc No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.VBELN}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="VKORG">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"> Sales Organization</th>
+      <td mat-cell *matCellDef="let element"> {{element.VKORG}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="LFDAT">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight"> Delivered Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.LFDAT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="LFUHR">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol"> Delivered Time</th>
+      <td mat-cell *matCellDef="let element"> {{element.LFUHR}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="WAERK">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol"> Currency </th>
+      <td mat-cell *matCellDef="let element"> {{element.WAERK}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="fragment(row.VBELN)"></tr>
+  </table>
+  <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+  </mat-paginator>

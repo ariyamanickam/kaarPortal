@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="vendorprofilewhole">
+
+    <div class="employeeprofile">
+        <div class="employeeheader">
+            <div class="employeeheader_h1">
+                <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198?b=1&k=20&m=476085198&s=170667a&w=0&h=Ct4e1kIOdCOrEgvsQg4A1qeuQv944pPFORUQcaGw4oI=" style="height:100px ;">
+            </div>
+            <div class="details">
+                <h2>{{Profilelistresult.ENAME}}</h2>
+                <h3 style="margin-top:-5px ;">( {{Profilelistresult.PERNR}} )</h3>
+               
+            </div>
+            <div class="contentadjusment">
+                
+                   
+                        <table style="width:100%">
+                            <tr>
+                                <th>Practice:</th>
+                                <td>{{Profilelistresult.ORGEH_TXT}}</td>
+                            </tr>
+                            <tr>
+                                <th>Designation:</th>
+                                <td>{{Profilelistresult.PLANS_TXT}}</td>
+                            </tr>
+                            <tr>
+                                <th>Nationality:</th>
+                                <td>{{Profilelistresult.NATIO}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>Orgeh:</th>
+                                <td>{{Profilelistresult.ORGEH}}</td>
+                            </tr>
+                            <tr>
+                                <th>Date of Birth:</th>
+                                <td>{{Profilelistresult.GBDAT}}</td>
+                            </tr>
+                            <tr>
+                                <th>Contact No:</th>
+                                <td>{{Profilelistresult.TELNR}}</td>
+                            </tr>
+                            <tr>
+                                <th>Address:</th>
+                                <td>{{Profilelistresult.STRAS}}, {{Profilelistresult.ORT01}}, {{Profilelistresult.PSTLZ}}</td>
+                            </tr>
+                    
+                    
+                        </table>
+                  
+                    
+                  
+            </div>
+    
+            
+    
+        </div>
+       
+       
+    </div>
+    <div class="overallchart">
+    
+        <div id="container">
+          <div class="kpi-card orange">
+            <span class="card-value">{{Leave_count}}/18</span>
+            <span class="card-text">Total Leave</span>
+            <i class="fa fa-calendar-check-o icon"></i>
+          </div>
+      
+      
+          <div class="kpi-card purple">
+            <span class="card-value">{{Leave_ul}}/10 </span>
+            <span class="card-text">Total Unpaid leave</span>
+            <i class="fa fa-calendar-check-o icon"></i>
+          </div>
+      
+          <div class="kpi-card grey-dark">
+            <span class="card-value">{{Leave_pl}}/8 </span>
+            <span class="card-text">Total Privilege leave</span>
+            <i class="fa fa-calendar-check-o icon"></i>
+          </div>
+      
+         
+        </div>
+      
+      
+      
+      
+      </div>
+
+</div>
+
+

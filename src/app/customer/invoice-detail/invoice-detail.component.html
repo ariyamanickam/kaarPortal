@@ -1,0 +1,49 @@
+<div class="fragment">
+
+  <div class="fragmentHeader">
+    <h1>Invoice Detail</h1>
+  </div>
+
+
+
+
+  <table style="width:100%">
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Doc_No:</th>
+      <td>{{x.VBELN}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Reference Document:</th>
+      <td>{{x.VGBEL}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Exchange Rate:</th>
+      <td>{{x.STCUR}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Rebate:</th>
+      <td>{{x.BONBA}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Credit price:</th>
+      <td>{{x.CMPRE}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Record Creation Date:</th>
+      <td>{{x.ERDAT}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Invoice Date:</th>
+      <td>{{x.FBUDA}}</td>
+    </tr>
+    <tr *ngFor="let x of InvoiceDetailresult ">
+      <th>Item:</th>
+      <td>{{x.VGPOS}}</td>
+    </tr>
+
+  </table>
+  <button class="btn" (click)="InvoicePrint()"><i class="fa fa-download"></i> Download</button>
+</div>
+
+
+

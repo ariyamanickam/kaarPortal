@@ -1,0 +1,142 @@
+<!-- <p>customer-dashboard works!</p>
+<div *ngFor="let post of postList" class="post-item">
+    <h2>{{post.CUSTOMER_ID}}</h2>
+    <h2>{{post.PASSWORD}}</h2>
+    <h2>{{post.USERNAME}}</h2>
+</div> -->
+<!-- <form (submit)="addPost()" #postForm="ngForm">
+    <div><input type="text" name="title" [(ngModel)]="post.title" placeholder="Employee Name:" required></div> 
+    <div><input type="url" name="link" [(ngModel)]="post.url" placeholder="Practise" required></div> 
+    <div><button type="submit" [disabled]="!postForm.valid">Post It!</button></div>
+</form> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<div class="loginheadh" >
+  <mat-tab-group class="tabshead">
+    <mat-tab label="Customer" class="active nav nav-tabs nav-justified " id="userform" style="color:white ;">
+      <div id="form">
+        <div class="container">
+          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+            <div id="userform">
+              <div class="tab-content">
+                <div class="tab-pane fade active in" id="signup">
+                  <h2 class="text-uppercase text-center"> Welcome</h2>
+                  <form id="signup" (submit)="addPost()" #postForm="ngForm">
+
+
+                    <div class="form-group">
+                      <!-- <label > Username<span class="req">*</span> </label> -->
+                      <input type="text" class="form-control" id="phone" required placeholder="Username*"
+                        data-validation-required-message="Please enter your phone number." autocomplete="off" name="title" [(ngModel)]="post.title">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group">
+                      <!-- <label> Password<span class="req">*</span> </label> -->
+                      <input type="password" class="form-control" id="password" required placeholder="Password*"
+                        data-validation-required-message="Please enter your password" autocomplete="off" name="link" [(ngModel)]="post.url">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="mrgn-30-top">
+                      <button  class="btn btn-larger btn-block" type="submit">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /.container -->
+
+    </mat-tab>
+    <mat-tab label="Vendor">
+      <div id="form">
+        <div class="container">
+          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+            <div id="userform">
+              <!-- <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li class="active"><a href="#signup"  role="tab" data-toggle="tab">Sign up</a></li>
+                <li><a href="#login"  role="tab" data-toggle="tab">Log in</a></li>
+              </ul> -->
+              <div class="tab-content">
+                <div class="tab-pane fade active in" id="signup">
+                  <h2 class="text-uppercase text-center"> Welcome</h2>
+                  <form id="signup" (submit)="addPost1()" #postForm1="ngForm">
+
+
+                    <div class="form-group">
+                      
+                      <input type="text" class="form-control" id="phone" required placeholder="Username*"
+                        data-validation-required-message="Please enter your phone number." autocomplete="off" name="title" [(ngModel)]="post1.title">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group">
+                      
+                      <input type="password" class="form-control" id="password" required placeholder="Password*"
+                        data-validation-required-message="Please enter your password" autocomplete="off" name="link" [(ngModel)]="post1.url">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="mrgn-30-top">
+                      <button type="submit" class="btn btn-larger btn-block">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Employee">
+      <div id="form">
+        <div class="container">
+          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+            <div id="userform">
+              <!-- <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li class="active"><a href="#signup"  role="tab" data-toggle="tab">Sign up</a></li>
+                <li><a href="#login"  role="tab" data-toggle="tab">Log in</a></li>
+              </ul> -->
+              <div class="tab-content">
+                <div class="tab-pane fade active in" id="signup">
+                  <h2 class="text-uppercase text-center"> Welcome</h2>
+                  <form id="signup1" (submit)="addPost2()" #postForm2="ngForm">
+
+
+                    <div class="form-group">
+                      
+                      <input type="text" class="form-control" id="phone" required placeholder="Username*"
+                        data-validation-required-message="Please enter your phone number." autocomplete="off" name="title" [(ngModel)]="post2.title">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group">
+                      
+                      <input type="password" class="form-control" id="password" required placeholder="Password*"
+                      data-validation-required-message="Please enter your password" autocomplete="off" name="link" [(ngModel)]="post2.url">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="mrgn-30-top">
+                      <button type="submit" class="btn btn-larger btn-block">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+
+
+

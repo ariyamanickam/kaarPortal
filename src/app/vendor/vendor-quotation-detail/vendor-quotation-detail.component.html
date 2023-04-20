@@ -1,0 +1,37 @@
+<div class="fragment">
+    <div class="fragmentHeader">
+        <h1>Quotation Detail</h1>
+      </div>
+      <table >
+        <tr>
+          <th >Document No</th>
+          <th>Purchase order No</th>
+          <th>Effective value</th>
+          <th >Material</th>
+          <th>Purchase Info Record</th>
+          <th>Quantity</th>
+          <th>Net Price</th>
+          <th>Net Value</th>
+          <th >Requisition information</th>
+          <th>Company code</th>
+      
+        </tr>
+        <tr *ngFor="let x of quotationlistresults ">
+           <td>{{x.EBELN}}</td>
+           <td>{{x.EBELP}}</td>
+           <td>{{x.EFFWR}}</td>
+           <td>{{x.EMATN}}</td>
+           <td>{{x.INFNR}}</td>
+           <td>{{x.MENGE}}</td>
+           <td>{{x.NETPR}}</td>
+           <td>{{x.NETWR}}</td>
+           <td>{{x.BNFPO}}</td>
+           <td>{{x.BUKRS}}</td>
+           
+        </tr>
+      </table>
+    
+    
+
+</div>
+

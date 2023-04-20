@@ -1,0 +1,193 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="vendorprofilewhole">
+
+    <div class="employeeprofile">
+        <div class="employeeheader">
+            <div class="employeeheader_h1">
+                <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198?b=1&k=20&m=476085198&s=170667a&w=0&h=Ct4e1kIOdCOrEgvsQg4A1qeuQv944pPFORUQcaGw4oI=" style="height:100px ;">
+            </div>
+            <div class="details">
+                <h2>{{general.FORMOFADDR}}.{{general.VENDOR}}</h2>
+               
+            </div>
+            <div class="contentadjusment">
+                <mat-tab-group>
+                    <mat-tab label="General Detail"> 
+                        <table style="width:100%">
+                            <tr>
+                                <th>Name:</th>
+                                <td>{{general.FORMOFADDR}}.{{general.NAME}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>Language:</th>
+                                <td>{{general.LANGU_ISO}}</td>
+                            </tr>
+                            <tr>
+                                <th>Nationality:</th>
+                                <td>{{general.COUNTRYISO}}</td>
+                            </tr>
+                            
+                        
+                            <tr>
+                                <th>Contact No:</th>
+                                <td>{{general.TELEPHONE}}</td>
+                            </tr>
+                            <tr>
+                                <th>Address:</th>
+                                <td>{{general.STREET}}, {{general.CITY}}, {{general.POSTL_CODE}}</td>
+                            </tr>
+                    
+                    
+                    
+                        </table>
+                    </mat-tab>
+                    <mat-tab label="Company Detail"> 
+                        <table style="width:100%">
+                            
+                            <tr>
+                                <th>Company code:</th>
+                                <td>{{company.COMP_CODE}}</td>
+                            </tr>
+                            <tr>
+                                <th>Head Office:</th>
+                                <td>{{company.HD_OFFICE}}</td>
+                            </tr>
+                            <tr>
+                                <th>Payment Method:</th>
+                                <td>{{company.PAYMENT_METHODS}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>Terms of Payment:</th>
+                                <td>{{company.PMNTTRMS}}</td>
+                            </tr>
+                            
+                           
+                    
+                    
+                    
+                        </table>
+                    </mat-tab>
+                    <mat-tab label="Bank Detail"> 
+                        <table style="width:100%">
+                            
+                            <tr>
+                                <th>Bank Account:</th>
+                                <td>{{bank.BANK_ACCT}}</td>
+                            </tr>
+                            <tr>
+                                <th>Bank Country:</th>
+                                <td>{{bank.BANK_CTRY}}</td>
+                            </tr>
+                            <tr>
+                                <th>Bank key:</th>
+                                <td>{{bank.BANK_KEY}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>Bank Reference:</th>
+                                <td>{{bank.BANK_REF}}</td>
+                            </tr>
+                            
+                           
+                    
+                    
+                    
+                        </table>
+                    
+                    </mat-tab>
+                    <mat-tab label="IBand Detail"> 
+                        <table style="width:100%">
+                            
+                            <tr>
+                                <th>Bank Account:</th>
+                                <td>{{iban.BANK_ACCT}}</td>
+                            </tr>
+                            <tr>
+                                <th>Bank Country:</th>
+                                <td>{{iban.BANK_CTRY}}</td>
+                            </tr>
+                            <tr>
+                                <th>Bank key:</th>
+                                <td>{{iban.BANK_KEY}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>IBAN:</th>
+                                <td>{{iban.IBAN}}</td>
+                            </tr>
+                            <tr>
+                                <th>Valid From:</th>
+                                <td>{{iban.VALID_FROM}}</td>
+                            </tr>
+            
+                            
+                            
+                           
+                    
+                    
+                    
+                        </table>
+            
+                    </mat-tab>
+                  </mat-tab-group>
+            </div>
+    
+            
+    
+        </div>
+       
+       
+    </div>
+    <div class="overallchart">
+    
+        <div id="container">
+          <div class="kpi-card orange">
+            <span class="card-value">{{quotationlistresults}} </span>
+            <span class="card-text">Total Quotation</span>
+            <i class="fa fa-tags icon"></i>
+          </div>
+      
+      
+          <div class="kpi-card purple">
+            <span class="card-value">{{purchaselistresults}} </span>
+            <span class="card-text">Total Purchase Order</span>
+            <i class="fa fa-suitcase icon"></i>
+          </div>
+      
+          <div class="kpi-card grey-dark">
+            <span class="card-value">{{goodslistresults}} </span>
+            <span class="card-text">Total Goods Receipt</span>
+            <i class="fa fa-shopping-cart icon"></i>
+          </div>
+      
+          <div class="kpi-card red">
+            <span class="card-value"> {{invoicelistresults}} </span>
+            <span class="card-text">Total Invoice</span>
+            <i class="fa fa-id-card icon"></i>
+          </div>
+        </div>
+      
+      
+      
+        <div id="chart">
+          <h3 style="text-align: center ;">Payment Aging Overdue Date</h3>
+          <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions" [xaxis]="chartOptions.xaxis"></apx-chart>
+        </div>
+        <h3 class="donutlable">Credit/Debit Memo</h3>
+        <div id="chart1">
+      
+          <apx-chart [series]="chartAreaSparkline1Options.series" [chart]="chartAreaSparkline1Options.chart"
+            [labels]="chartAreaSparkline1Options.labels" [responsive]="chartAreaSparkline1Options.responsive"></apx-chart>
+        </div>
+      
+      </div>
+
+</div>
+
+

@@ -1,0 +1,73 @@
+
+
+
+ <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="isExpanded">
+      <mat-nav-list>
+  
+        <mat-list-item (click)="isExpanded = !isExpanded" class="menu-button">
+          <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">more_vert
+          </mat-icon>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="['/customerboard/profile']">
+          <mat-divider></mat-divider>
+          <mat-icon mat-list-icon>account_box</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item dropbtn dropbtn">Profile</span>
+        </mat-list-item>
+        
+  
+        <mat-list-item >
+          <mat-divider></mat-divider>
+          <mat-icon mat-list-icon>account_balance_wallet</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item"><div class="dropdown">
+            <button class="dropbtn">Financial Sheet</button>
+            <div class="dropdown-content">
+            <a [routerLink]="['/customerboard/invoice']">Invoice details </a>
+            <a [routerLink]="['/customerboard/payment']">Payments and aging </a>
+            <a [routerLink]="['/customerboard/credit']">Credit Memo</a>
+            <a [routerLink]="['/customerboard/debit']">Debit Memo</a>
+            </div>
+          </div><mat-divider></mat-divider></span>
+         
+        </mat-list-item>
+        
+  
+        <mat-list-item >
+            <mat-divider></mat-divider>
+          <mat-icon mat-list-icon>assessment</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item"><div class="dropdown">
+            <button class="dropbtn">Dashboard</button>
+            <div class="dropdown-content">
+            <a [routerLink]="['/customerboard/inquiry']">Inquiry data </a>
+            <a [routerLink]="['/customerboard/sales']">Sale order data </a>
+            <a [routerLink]="['/customerboard/delivery']">List of Delivery</a>
+            </div>
+          </div><mat-divider></mat-divider></span>
+        </mat-list-item>
+        <div class="dashlogout">
+          <mat-list-item (click)="custo_logout();">
+            <mat-divider></mat-divider>
+            <mat-icon mat-list-icon>power_settings_new</mat-icon>
+            <span *ngIf="isExpanded" class="menu-item dropbtn dropbtn">Logout</span>
+          </mat-list-item>
+        </div>
+        
+        
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+  
+    <mat-sidenav-content>
+        <mat-toolbar class="mat-elevation-z8">
+    
+            Customer Portal
+        </mat-toolbar>
+        <div class="content mat-elevation-z8">
+            
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>

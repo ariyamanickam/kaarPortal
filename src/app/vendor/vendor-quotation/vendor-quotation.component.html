@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="Payment_Ageing">
+    <h1>Quotation data</h1>
+</div>
+
+<div class="filter">
+    <mat-form-field appearance="standard">
+        <mat-label><mat-icon mat-list-icon class="icon-display">search</mat-icon>&ensp;Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+    </mat-form-field>
+    <button class="btn" (click)="exportexcel()"><i class="fa fa-download"></i> Download</button>
+    <a class="btn1" style="text-decoration: none;" href="https://services.azureml.net/workspaces/83e45a379fb64796977035190cee5a0d/webservices/6e956c7305134e12a0b1867224c1bda1/endpoints/default/test/rrs">Prediction</a>
+</div>
+<section class="micposition">
+    
+    <button mat-fab *ngIf="listening$ | async; else mic" (click)="stop()">
+        <mat-icon class="soundwave">mic</mat-icon>
+    </button>
+    <ng-template #mic>
+        <button mat-fab (click)="start()">
+            <mat-icon>mic</mat-icon>
+        </button>
+    </ng-template>
+  </section>
+  
+  <section *ngIf="transcript$ | async">
+  
+  </section>
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort
+    (matSortChange)="announceSortChange($event)" id="excel-table">
+
+
+    <ng-container matColumnDef="EBELN">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Quotation Doc No.
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.EBELN}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="EKORG">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"> Purchasing Organization </th>
+        <td mat-cell *matCellDef="let element"> {{element.EKORG}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="EXNUM">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight"> Export No </th>
+        <td mat-cell *matCellDef="let element"> {{element.EXNUM}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="KNUMV">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol"> Document Condition
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.KNUMV}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="KUNNR">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol"> Customer No
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.KUNNR}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PROCSTAT">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol"> Processing Status
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.PROCSTAT}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="WKURS">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol"> Export Ratio in Foreign Currency
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.WKURS}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="fragment(row.EBELN)"></tr>
+</table>
+<mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+</mat-paginator>
+
